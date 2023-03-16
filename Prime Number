@@ -1,0 +1,86 @@
+package Practiceing;
+
+import java.util.Scanner;
+
+public class Practiceing {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+     
+        System.out.println("Prime Number Finding Operations... ");
+        System.out.println("\n1) Single Prime Number\n2) Prime Numbers Between Range\n");
+        System.out.print("Please Enter Choise : ");
+        int ch = input.nextInt();
+
+        switch (ch) {
+            case 1:                                             // for single number/digit to check
+                System.out.print("Enter a Number/Digit : ");  
+                int cnt = 0,
+                 s_num = input.nextInt();
+
+                for (int i = 2; i < s_num; i++) {
+                    if (s_num % i == 0) {
+                        cnt++;
+                        break;
+                    }
+                }
+
+                if (cnt == 0) {
+                    System.out.println(s_num + " is Prime Number.");
+                } else {
+                    System.out.print(s_num + " is not Prime Number");
+                }
+                           
+
+            case 2:                                             //for a range 
+                System.out.print("Enter initial number : ");
+                int num1 = input.nextInt();
+                System.out.print("Enter ending number : ");
+                int num2 = input.nextInt();
+                int count = 0,
+                 total = 0;
+
+                if (num1 < num2) {
+                    if (num1 == 0 || num1 == 1) {
+                        for (int j = 2; j <= num2; j++) {
+
+                            for (int i = 2; i < j; i++) {
+                                if (j % i == 0) {
+                                    count++;
+                                    break;
+                                }
+                            }
+
+                            if (count == 0) {
+                                total++;
+                                System.out.println(j);
+                            }                            
+                            count = 0;
+                        }
+                        System.out.println("The number of Prime number is: " + total);
+
+                    } else {
+                        for (int j = num1; j <= num2; j++) {
+
+                            for (int i = 2; i < j; i++) {
+                                if (j % i == 0) {
+                                    count++;
+                                    break;
+                                }
+                            }
+
+                            if (count == 0) {
+                                total++;
+                                System.out.println(j);
+                            }
+                            count = 0;
+                        }
+                        System.out.println("The number of Prime number is: " + total);
+                    }
+                } else {
+                    System.out.println("\nInvalid input. Try again");
+                }                
+        }
+    }
+}
