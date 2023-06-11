@@ -31,7 +31,7 @@ public class Practiceing {
                 } else {
                     System.out.print(s_num + " is not Prime Number");
                 }
-                           
+                     break;      
 
             case 2:                                             //for a range 
                 System.out.print("Enter initial number : ");
